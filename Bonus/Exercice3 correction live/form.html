@@ -1,0 +1,25 @@
+  <form name="form">
+    <label for="name">Nom : </label>
+    <input type="text" name="name" ng-model="name" placeholder="Dupont" ng-pattern="nameRegex" required />
+    <p ng-show="form.name.$error.pattern">Le nom doit commencer par une majuscule et ne pas comporter de chiffres.</p>
+    <label for="email">Email : </label>
+    <input type="email" name="email" ng-model="email" placeholder="exemple@mail.fr" ng-pattern="mailRegex" required />
+    <p ng-show="form.email.$error.pattern">Merci de rentrer une adresse mail valide.</p>
+    <label for="subject">Sujet du mail : </label>
+    <input type="text" name="subject" ng-model="subject" placeholder="sujet" minlength="5" required />
+    <p ng-show="form.subject.$error.minlength">Merci d'entrer au minimum 5 caractères.</p>
+    <label for="textArea">Message : </label>
+    <textarea name="textArea"  ng-model="textArea" rows="8" cols="80" minlength="5" required></textarea>
+    <p ng-show="form.textArea.$error.minlength">Merci d'entrer au minimum 5 caractères.</p>
+    <!-- Ci-dessous le boutton auquel nous avons placé un ng-click gérant la fonction sendMessage()
+          qui permet de stocker les donnés saisies au clic.-->
+    <button ng-click="sendMessage()" type="submit" name="validate">Valider</button>
+  </form>
+  <ol>
+    <!-- le ng-repeat permet de créer une "boucle" qui permettra l'affichage des 'subjectLink'
+          du tableau 'subjectMessageList'.
+          A chaque clic sur le boutton un nouveau sujet s'affichera sous le précédent sous forme de liste.
+          Les sujets seront affichés sous forme de liens qui renveront vers un index
+          mailInfo/0 pour le premier sujet de la liste, mailInfo/1 pour le deuxiéme et ainsi de suite.-->
+    <li ng-repeat="subjectLink in subjectMessageList"><a href="#!/mailInfo/{{$index}}"> {{ subjectLink }}</a></li>
+  </ol>

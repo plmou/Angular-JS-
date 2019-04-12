@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 3</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <script src="script.js"></script>
+
+</head>
+<body ng-app="showTopic" ng-controller="topicController">
+  <div class="theForm">
+    <form class="form" action="post" method="post" name="myform">
+      <label for="name">Nom: </label>
+      <input type="name" name="name" ng-model="name" ng-pattern="regexname" ng-required="required"><br>
+
+      <div ng-show="myform.name.$error.required">champs obligatoire</div>
+      <div ng-show="myform.name.$error.pattern">vérifiez que votre saisie commence par une majuscule et contient au moins deux lettres</div>
+
+      <label for="email">adresse mail: </label>
+      <input type="mail" name="mail" ng-model=mail id="mail" ng-pattern="regexmail" placeholder="katya@gmail.com" ng-required="required"><br>
+  <div ng-show="myform.mail.$error.required">champs obligatoire</div>
+      <div ng-show="myform.mail.$error.pattern">vérifiez votre saisie</div>
+
+      <label for="topic">sujet: </label>
+      <input type="text" name="topic" ng-model="text" id="topic" minlength="4" required><br>
+
+      <div ng-show="myform.topic.$error.pattern">vérifiez votre saisie</div>
+      <label for="text">text: </label>
+      <textarea name="text" ng-model="area" rows="8" cols="80" minlength="4" required></textarea><br>
+      <div ng-show="myform.text.$error.pattern">vérifiez votre saisie</div>
+
+        <button type="button" name="button" ng-click=""=>valider</button>
+
+      </form>
+<ol>
+
+   <li ng-repeat="message in subjectMessage"> Sujet : {{message}} </li>
+</ol>
+    </div>
+  </body>
+  </html>

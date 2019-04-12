@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercie5</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script></head>
+  <script src="script.js"></script>
+  <body ng-app="app" ng-controller="showController">
+    <button ng-click="showText = true" >
+      montrer
+    </button>
+    <button ng-click="showText = false" >
+      cacher
+    </button>
+    <p ng-show="showText">
+      a mi me gusta bailar
+    </p>
+  </body>
+  </html>

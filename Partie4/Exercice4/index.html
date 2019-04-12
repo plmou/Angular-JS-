@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Exo 4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body ng-app="app" ng-controller="voituresController" >
+<div ng-repeat="voiture in voitures" ng-if="voiture.couleur != 'verte'">
+
+{{voiture.marque}}
+{{voiture.couleur}}
+
+</div>
+  </body>
+</html>

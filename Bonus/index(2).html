@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr"  ng-app="App">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <title>Exercice 1</title>
+</head>
+<body ng-controller="Ctrl">
+    <form action="post" name="formMail">
+        Saisissez votre email:  <input type="email" name="input" ng-model="mail" required>
+    </form>
+    <div>
+        <p ng-show="formMail.input.$error.required">Merci de remplir le champs</p>
+        <p ng-show="formMail.input.$error.email">Veuillez entrer une adresse email valide</p>
+        <p ng-show="formMail.input.$valid">Merci de votre participation</p>
+    </div>
+</body>
+</html>
